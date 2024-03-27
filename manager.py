@@ -36,13 +36,11 @@ class TaskManager:
             del self.tasks[task_id]
         except:
             raise InvalidId(f"Task with ID {task_id} does not exist.")
-        
+
+    
     def view_task(self, task_id):
             if task_id not in self.tasks:
                 raise InvalidId(f"Task with ID {task_id} does not exist.")
             task = self.tasks[task_id]
             return f"Description: {task.description}, date: {task.date} Status: {task.status}"
             
-
-    
-
